@@ -7,14 +7,14 @@
 using namespace std;
 class Solution {
 public:
-    bool canPlace(vector<int> stalls, int k, int dist){
-        int cows=1;
-        int lastPos=stalls[0];
-        for(int i=1;i<stalls.size();i++){
-            if(stalls[i]-lastPos>=dist){
-                cows++;
-                lastPos=stalls[i];
-                if(cows==k)return true;
+    bool canPlace(vector<int> pos, int k, int dist){
+        int ball=1;
+        int lastPos=pos[0];
+        for(int i=1;i<pos.size();i++){
+            if(pos[i]-lastPos>=dist){
+                ball++;
+                lastPos=pos[i];
+                if(ball==k)return true;
             }
         }
         return false;
