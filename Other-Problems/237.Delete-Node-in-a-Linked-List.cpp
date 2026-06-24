@@ -1,0 +1,22 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        node->val=node->next->val;
+        // ListNode* temp=node->next;
+        node->next=node->next->next;
+        // delete temp;
+    }
+};
+// Approach:
+// Copied the value from the next node to the current node and then bypassing the next node.
+//  This effectively deletes the current node from the linked list without needing access to the head of the list.
